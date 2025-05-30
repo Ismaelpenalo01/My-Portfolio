@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle del Proyecto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/2193d055c9.js"></script>
+  <link rel="stylesheet" href="projects.css">
+  <script src="https://kit.fontawesome.com/2193d055c9.js"></script>
+</head>
+<body>
+     <!-- Navbar-->
+    <nav>
+        <div class="leftContent">
+            <a href="">Ismael Peñaló</a>
+        </div>
+        <div class="rigthContent">
+           <a href="https://github.com/Ismaelpenalo01" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+                <span>Github</span>
+            </a>
+             <a href="https://www.linkedin.com/in/ismael-pe%C3%B1alo-983a44310/" target="_blank" rel="noopener">
+                <i class="fab fa-linkedin"></i>
+                <span>Linkedin</span>
+            </a>
+             <a href="mailto:penalodejesusismael@gmail.com" target="_blank" rel="noopener">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="project-container">
+  <div class="project-text">
+    <h1>Análisis de Flujo de Pasajeros del Metro de Santo Domingo 🚉</h1>
+    <p>
+        Este proyecto se centra en una base de datos exhaustiva diseñada para monitorear
+        el flujo diario de personas por estación en el Metro de Santo Domingo, con un énfasis
+        particular en las horas pico. Mi objetivo fue identificar las líneas y estaciones más
+        congestionadas, proporcionando información crítica para la toma de decisiones.
+
+    </p>
+     </div>
+      <div class="project-pic">
+      <img src="images/dashboard entero.png" alt="Dashboard">
+    </div>
+</section>
+<section class="tecnologias">
+    <h2>Tecnologías usadas</h2>
+     <div class="cells">
+            <div class="cell">
+                <img src="images/powerbi.png" alt="powerbi">
+                <span>Power BI</span>
+            </div>
+            <div class="cell">
+                <img src="images/sql.png" alt="SQL">
+                <span>SQL</span>
+            </div>
+            <div class="cell">
+                <img src="images/excel.png" alt="Excel">
+                <span>Ecxel</span>
+            </div>
+        </div>
+</section>
+
+
+<section class="dataView">
+    <div class="data-description">
+        <h1>Visualización de Datos</h1>
+        <p>
+      Esta sección te ofrece una visualización práctica de la capacidad
+      de la base de datos para no solo almacenar información, sino también
+      para transformarla en conocimiento útil. Así, te permitirá conocer la
+      congestión de personas dentro del metro e identificar las estaciones
+      con mayor flujo diario y por hora pico.
+        </p>
+        <h2>Estaciones del Metro</h2>
+    </div>
+       
+    <div class="table">
+
+       <div class="filtro-busqueda">
+        <i class="fas fa-search"></i>
+        <input type="text" id="busqueda" placeholder="Buscar estación o zona..." onkeyup="filtrarBusqueda()" />
+        </div>
+        <div class="controls">
+            <div class="leftContent">
+                <p>Mostrando 5 Estaciones</p>
+            </div>
+            <div class="rigthContent">
+        <label for="lineaFilter">Filtrar por Línea:</label>
+        <select id="lineaFilter" onchange="filtrarTabla()">
+            <option value="todas">Todas</option>
+            <option value="L1">Línea 1</option>
+            <option value="L2">Línea 2</option>
+        </select>
+        <button onclick="ordenarPorFlujo()">Ordenar por Flujo Diario ↑</button>
+        </div>    
+    </div>
+
+        <table id="tablaEstaciones">
+        <thead>
+            <tr>
+            <th>Estación</th>
+            <th>Zona</th>
+            <th>Línea</th>
+            <th>Flujo Diario</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            <script src="tablaMetro.js"></script>
+        </tbody>
+        </table>
+
+        <div class="pagination">
+        <button onclick="cambiarPagina(-1)" id="prevBtn">Anterior</button>
+        <span id="paginaActual">Página 1</span>
+        <button onclick="cambiarPagina(1)" id="nextBtn">Siguiente</button>
+        </div>
+
+        <script src="tablaMetro.js"></script>
+
+    </div>
+
+</section>
+</body>
+</html>
